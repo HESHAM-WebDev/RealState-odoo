@@ -1,0 +1,46 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="real_state.list">
+      <field name="name">RealState list</field>
+      <field name="model">real_state.real_state</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="postcode"/>
+          <field name="expected_price"/>
+          <field name="selling_price"/>
+
+        </tree>
+      </field>
+    </record>
+
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="real_state.action_window">
+      <field name="name">RealState window</field>
+      <field name="res_model">real_state.real_state</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+
+
+    <!-- Top menu item -->
+
+    <menuitem name="RealState" id="real_state.menu_root"/>
+
+    <!-- menu categories -->
+
+    <menuitem name="Advertisement" id="real_state.menu_1" parent="real_state.menu_root"/>
+
+    <!-- actions -->
+
+    <menuitem name="Properties" id="real_state.menu_1_list" parent="real_state.menu_1"
+              action="real_state.action_window"/>
+
+
+  </data>
+</odoo>
